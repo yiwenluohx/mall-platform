@@ -1,0 +1,37 @@
+server:
+  port: 8763
+
+#指定注册中心地址
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoint:
+    conditions:
+      enabled: true
+  endpoints: #开放所有页面节点  默认只开启了health、info两个节点
+    web:
+      exposure:
+        include: '*'
+spring:
+  application:
+    name: mall-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/yiwenluohx/mall
+          username: yiwenluohx
+          password: 121287lhx
+          search-paths: config
+  rabbitmq:  #本地环境不需要配置mq
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

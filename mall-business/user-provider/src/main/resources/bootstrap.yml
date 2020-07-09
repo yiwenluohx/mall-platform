@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: mall-user
+  #指定从哪个配置中心读取
+  cloud:
+    config:
+      discovery:
+        service-id: mall-config
+        enabled: true
+      profile: dev
+      label: master
+  rabbitmq:  #本地环境不需要配置mq，但是需要启动mq,Springboot会自动连接本地mq
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

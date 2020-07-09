@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: mall-goods
+  #指定从哪个配置中心读取
+  cloud:
+    config:
+      discovery:
+        service-id: mall-config
+        enabled: true
+      profile: dev
+      label: master
