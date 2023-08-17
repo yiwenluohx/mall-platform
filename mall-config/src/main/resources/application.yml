@@ -1,7 +1,7 @@
 server:
   port: 8763
 
-#Ö¸¶¨×¢²áÖĞĞÄµØÖ·
+#æŒ‡å®šæ³¨å†Œä¸­å¿ƒåœ°å€
 eureka:
   instance:
     prefer-ip-address: true
@@ -14,7 +14,7 @@ management:
   endpoint:
     conditions:
       enabled: true
-  endpoints: #¿ª·ÅËùÓĞÒ³Ãæ½Úµã  Ä¬ÈÏÖ»¿ªÆôÁËhealth¡¢infoÁ½¸ö½Úµã
+  endpoints: #å¼€æ”¾æ‰€æœ‰é¡µé¢èŠ‚ç‚¹  é»˜è®¤åªå¼€å¯äº†healthã€infoä¸¤ä¸ªèŠ‚ç‚¹
     web:
       exposure:
         include: '*'
@@ -28,9 +28,9 @@ spring:
         git:
           uri: https://github.com/yiwenluohx/mall
           username: yiwenluohx
-          password: 121287lhx
+          password: 920851lhx
           search-paths: config
-  rabbitmq:  #±¾µØ»·¾³²»ĞèÒªÅäÖÃmq
+  rabbitmq:  #æœ¬åœ°ç¯å¢ƒä¸éœ€è¦é…ç½®mq
     host: localhost
     port: 5672
     username: guest
