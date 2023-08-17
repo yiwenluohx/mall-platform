@@ -1,7 +1,7 @@
 server:
   port: 8002
 
-#·þÎñ×¢²á
+#ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
 eureka:
   instance:
     prefer-ip-address: true
@@ -11,13 +11,13 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 spring:
-  #Êý¾Ý¿âÁ¬½Ó
+  #ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver # com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.254.1.56:3306/lcc_pay_dev?useSSL=false&serverTimezone=GMT%2B8
-    username: pcp
-    password: pcp
+    url: jdbc:mysql://localhost:3306/ems-dev?useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: passw@rd
     druid:
       initial-size: 3
       min-idle: 1
@@ -45,18 +45,18 @@ spring:
 #mybatis-plus
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
-  #ÊµÌåÉ¨Ãè£¬¶à¸öpackageÓÃ¶ººÅ»òÕß·ÖºÅ·Ö¸ô
+  #Êµï¿½ï¿½É¨ï¿½è£¬ï¿½ï¿½ï¿½packageï¿½Ã¶ï¿½ï¿½Å»ï¿½ï¿½ß·ÖºÅ·Ö¸ï¿½
   typeAliasesPackage: com.lcchain.mall.base.common.entity
   global-config:
     db-config:
       id-type: auto
 
-# ÃèÊöÐÅÏ¢
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 info:
   author: luohx
   mail: Lhongxiao@lcchain.com
   version: @project.version@
-# ¼ÓÔØËùÓÐµÄ¶Ëµã/Ä¬ÈÏÖ»¼ÓÔØÁË info / health
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶Ëµï¿½/Ä¬ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ info / health
 management:
   endpoints:
     web:
@@ -65,7 +65,7 @@ management:
   endpoint:
     health:
       show-details: always
-    # ¿ÉÒÔ¹Ø±ÕÖÆ¶¨µÄ¶Ëµã
+    # ï¿½ï¿½ï¿½Ô¹Ø±ï¿½ï¿½Æ¶ï¿½ï¿½Ä¶Ëµï¿½
     shutdown:
       enabled: false
 

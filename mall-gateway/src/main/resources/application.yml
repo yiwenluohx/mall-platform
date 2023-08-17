@@ -4,9 +4,9 @@ eureka:
   instance:
     prefer-ip-address: true
   client:
-    register-with-eureka: true #ÊÇ·ñÏò·þÎñ×¢²áÖÐÐÄ×¢²á×Ô¼º
-    fetch-registry: true #ÊÇ·ñ¼ìË÷·þÎñ
-    serviceUrl: #·þÎñ×¢²áÖÐÐÄµÄÅäÖÃÄÚÈÝ£¬Ö¸¶¨·þÎñ×¢²áÖÐÐÄµÄÎ»ÖÃ
+    register-with-eureka: true #ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ô¼ï¿½
+    fetch-registry: true #ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    serviceUrl: #ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Î»ï¿½ï¿½
       defaultZone: http://localhost:8761/eureka/
 spring:
   application:
@@ -15,8 +15,8 @@ spring:
     gateway:
       discovery:
         locator:
-          lower-case-service-id: true #ÆôÓÃ·þÎñÊµÀýidÃû³ÆÐ¡Ð´Ö§³Ö
-          enabled: true #ÆôÓÃ»ùÓÚ·þÎñ·¢ÏÖµÄÂ·ÓÉ¶¨Î»
+          lower-case-service-id: true #ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½Êµï¿½ï¿½idï¿½ï¿½ï¿½ï¿½Ð¡Ð´Ö§ï¿½ï¿½
+          enabled: true #ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½Öµï¿½Â·ï¿½É¶ï¿½Î»
       routes:
         - id: mall-user
           uri: lb:http://mall-user
@@ -24,11 +24,17 @@ spring:
             - Path=/mall-user/**
           filters:
             - StripPrefix=1
+        - id: mall-order
+          uri: lb:http://mall-order
+          predicates:
+            - Path=/mall-order/**
+          filters:
+            - StripPrefix=1
 management:
   endpoint:
-    conditions: #Ç°×º£¬ ÔÚµ±Ç°Â·¾¶Æ¥ÅäÖÐ±íÊ¾È¥µôµÚÒ»¸öÇ°×º
+    conditions: #Ç°×ºï¿½ï¿½ ï¿½Úµï¿½Ç°Â·ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½Ð±ï¿½Ê¾È¥ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ç°×º
       enabled: true
-  endpoints: #¿ª·ÅËùÓÐÒ³Ãæ½Úµã  Ä¬ÈÏÖ»¿ªÆôÁËhealth¡¢infoÁ½¸ö½Úµã
+  endpoints: #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Úµï¿½  Ä¬ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½healthï¿½ï¿½infoï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
     web:
       exposure:
         include: '*'
